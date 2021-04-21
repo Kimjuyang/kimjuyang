@@ -1,5 +1,5 @@
 # 58 
-# Runtime: 32 ms
+# Accepted Runtime: 28 ms
 class Solution :
     def lengthOfLastWord(self, s:str) -> int :
         s_split = s.split()
