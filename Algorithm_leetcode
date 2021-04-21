@@ -1,5 +1,6 @@
-# 58 
-# Accepted Runtime: 28 ms
+# 58. Length of Last Word 
+# Accepted Runtime 28 ms
+
 class Solution :
     def lengthOfLastWord(self, s:str) -> int :
         s_split = s.split()
@@ -8,7 +9,7 @@ class Solution :
         else :
             return len(s_split[-1])
             
-# 66
+# 66. Plus One 
  
  
  
@@ -17,7 +18,16 @@ class Solution :
 
 
 
-# 67
+# 67. Add Binary
+# Accepted Runtime 32 ms
+# int(a,2) : 2진법 -> 10진법
+# return bin(int(a,2)+int(b,2)) : 10진법 -> 2진법
+
+class Solution:
+    def addBinary(self, a: str, b: str) -> str:
+        return bin(int(a,2) + int(b,2))[2::]  
+
+# 69. Sqrt(x)    
 
 
 
@@ -26,34 +36,11 @@ class Solution :
 
 
 
+# 70. Climbing Stairs  
 
 
 
 
-
-
-
-
-
-
-
-
-# 69
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# 70
 
 
 
