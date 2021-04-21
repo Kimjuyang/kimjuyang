@@ -8,7 +8,8 @@ class Solution :
             return 0
         else :
             return len(s_split[-1])
-            
+        
+        
 # 66. Plus One 
  
  
@@ -27,13 +28,15 @@ class Solution:
     def addBinary(self, a: str, b: str) -> str:
         return bin(int(a,2) + int(b,2))[2::]  
 
+
 # 69. Sqrt(x)    
-
-
-
-
-
-
+class Solution:
+    def mySqrt(self, x: int) -> int:
+        x_sqrt = math.sqrt(x)
+        if x_sqrt == int :
+            return(x_sqrt)
+        else :
+            return(math.trunc(x_sqrt))
 
 
 # 70. Climbing Stairs  
