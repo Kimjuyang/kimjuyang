@@ -8,17 +8,38 @@ class Solution :
             return 0
         else :
             return len(s_split[-1])
-        
+
         
 # 66. Plus One 
+# Accepted Runtime 32 ms -> for() ?  [1,2,3,9,9] 구현방법 
+
+class Solution:
+    def plusOne(self, digits: List[int]) -> List[int]:
+        n = digits[-1]
+        n2 = digits[-2]
+        del digits[-1]
+        digits.append(n+1)
+        if digits[-1] == 10 :
+            digits[-1] = 0
+            digits[-2] = n2+1
+        return digits
+        
+# ?         
+class Solution:
+    def plusOne(self, digits: List[int]) -> List[int]:
+        num = len(digits)
+        for i in range(num):
+            n = digits[-1]
+            n2 = digits[-2]
+            del digits[-1]
+            digits.append(n+1)
+            
+            if digits[-1] == 10 :
+                digits[-1] = 0
+                digits[-2] = n2+1
+            return digits
  
  
- 
-
-
-
-
-
 # 67. Add Binary
 # Accepted Runtime 32 ms
 # int(a,2) : 2진법 -> 10진법
@@ -29,7 +50,9 @@ class Solution:
         return bin(int(a,2) + int(b,2))[2::]  
 
 
-# 69. Sqrt(x)    
+# 69. Sqrt(x)   
+# Accepted Runtime 16 ms
+
 class Solution:
     def mySqrt(self, x: int) -> int:
         x_sqrt = math.sqrt(x)
@@ -40,6 +63,7 @@ class Solution:
 
 
 # 70. Climbing Stairs  
+# Accepted Runtime 16 ms
 
 
 
