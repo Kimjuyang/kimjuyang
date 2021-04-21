@@ -4,7 +4,7 @@ class Solution :
         s_split = s.split()
         if len(s_split)==0 :
             return 0
-        else 
+        else :
             return len(s_split[-1])
             
             
@@ -13,17 +13,18 @@ class Solution :
         s_split = s.split()
         if len(s_split)==0 :
             return 0
-        else 
             return len(s_split[-1])
 
-class Solution :
-   def lengthOfLastWord(self, s:str) -> int :
-       s_split = s.split()
-       if len(s_split)==0 :
-           return 0
-       else 
-           return len(s_split[-1])
-           
+# 66
+ 
+ 
+ 
+
+
+
+
+
+# 67
 
 
 
@@ -44,12 +45,22 @@ class Solution :
 
 
 
+# 69
 
 
 
 
 
 
+
+
+
+
+
+
+
+
+# 70
 
 
 
