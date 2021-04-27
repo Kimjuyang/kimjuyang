@@ -76,3 +76,138 @@ class Solution:
 
 
 
+---------------------------------------------------
+
+
+# 83. Remove Duplicates from Sorted List    
+# Accepted Runtime 44 ms
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+class Solution:
+    def deleteDuplicates(self, head: ListNode) -> ListNode:
+        n = head
+        while n and n.next :
+            if n.val == n.next.val :
+                n.next = n.next.next
+            else :
+                n = n.next
+        return head
+
+
+# 88. Merge Sorted Array   
+# Accepted Runtime ? ms
+class Solution:
+    def merge(self, nums1: List[int], m: int, nums2: List[int], n: int) -> None:
+        """
+        Do not return anything, modify nums1 in-place instead.
+ 
+        """
+        i=0
+        j=0
+        for i in range(len(nums1)-1,-1,-1):
+            while nums1[i]==0 and j<n:
+                nums1[i] = nums2[j]
+                j +=1
+        return nums1.sort()
+        
+# Accepted Runtime 36 ms
+class Solution:
+    def merge(self, nums1: List[int], m: int, nums2: List[int], n: int) -> None:
+        """
+        Do not return anything, modify nums1 in-place instead.
+        
+        """
+        for i in range(m+n):
+            if i==m:
+                del nums1[m:]
+        for i in nums2:
+            nums1.append(i)
+            
+        return nums1.sort()            
+
+
+# 100. Same Tree
+# Accepted Runtime 28 ms
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def isSameTree(self, p: TreeNode, q: TreeNode) -> bool:
+        def new(p,q):
+            if p is None and q is None : return True
+            if p is None and q is not None : return False
+            if p is not None and q is None : return False
+            if p.val != q.val : return False
+            return new(p.left,q.left) and new(p.right, q.right)
+        return new(p,q)
+    
+    
+# 101. Symmetric Tree
+# Accepted Runtime 28 ms
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def isSymmetric(self, root: TreeNode) -> bool:
+        if not root : return True
+        return self.checkSymmetric(root, root)
+    
+    def checkSymmetric(self, node1, node2) :
+        if not node1 and not node2 : return True
+        if not node1 or not node2 : return False
+        if node1.val != node2.val : return False
+        return self.checkSymmetric(node1.left, node2.right) and self.checkSymmetric(node1.right, node2.left)
+
+# Accepted Runtime 32 ms
+class Solution:
+    def isSymmetric(self, root: TreeNode) -> bool:
+        if not root : return True
+        return self.checkSymmetric(root.left, root.right)
+    
+    def checkSymmetric(self, root1, root2):
+        if not root1 or not root2 :
+            return root1 == root2
+        if root1.val != root2.val :
+            return False
+        return self.checkSymmetric(root1.left, root2.right) and self.checkSymmetric(root1.right, root2.left)
+
+
+# 104. Maximum Depth of Binary Tree
+# Accepted Runtime 44 ms
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def maxDepth(self, root: TreeNode) -> int:
+        s1 = s2 = 1
+        if root == None :
+            return 0
+        else :
+            s1 += self.maxDepth(root.left)
+            s2 += self.maxDepth(root.right)
+            return max(s1,s2)
+
+class Solution:
+    def maxDepth(self, root: TreeNode) -> int:
+        if root == None :
+            return 0
+        else :
+            return max(self.maxDepth(root.left),self.maxDepth(root.right))+1
+            
+            
+
+
+
+
