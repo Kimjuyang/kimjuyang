@@ -283,8 +283,39 @@ a = int(input("정수 하나를 입력 ?"))
 result = factorial(a)
 print(" %d! = %d" % (a,result))
 
+- factorial algorithm 
 
---------------------------------------------------------------------
+
+5.
+함수 사용 
+import math 
+math.factorial(5)
+
+6. 
+for() 문 사용
+-> 첫 값을 1로 두고 n까지 반복하면서 곱해나가는 방식 
+
+def factorial_for(n):
+    ret = 1 
+    for i in range(1, n+1):
+        ret *=i
+    return ret 
+
+factorial_for(5)
+
+7. 
+재귀함수 
+위 함수는 N이 1일 때는 1을 그대로
+아닐 때는 N에 (N - 1)! 재귀함수를 곱해 반환
+
+def factorial_recursive(n):
+    return n*factorial_recursive(n-1) if n>1 else 1
+
+factorial_recursive(5)
+
+
+
+------------------------------------------------------
 
 ## 재귀 연습
 
