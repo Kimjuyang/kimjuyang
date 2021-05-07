@@ -272,26 +272,13 @@ def factorial(n):
 return n * factorial(n - 1)    # n과 factorial 함수에 n - 1을 넣어서 반환된 값을 곱함
 
 
-4. 
-재귀
-def factorial(n):
-    if n==1:
-        return 1
-    else:
-        return n * factorial(n-1)
-a = int(input("정수 하나를 입력 ?"))
-result = factorial(a)
-print(" %d! = %d" % (a,result))
-
-- factorial algorithm 
-
-
-5.
-함수 사용 
+4.
+math 함수 사용 
 import math 
 math.factorial(5)
 
-6. 
+
+5. 
 for() 문 사용
 -> 첫 값을 1로 두고 n까지 반복하면서 곱해나가는 방식 
 
@@ -302,128 +289,6 @@ def factorial_for(n):
     return ret 
 
 factorial_for(5)
-
-7. 
-재귀함수 
-위 함수는 N이 1일 때는 1을 그대로
-아닐 때는 N에 (N - 1)! 재귀함수를 곱해 반환
-
-def factorial_recursive(n):
-    return n*factorial_recursive(n-1) if n>1 else 1
-
-factorial_recursive(5)
-
-
-
-------------------------------------------------------
-
-## 재귀 연습
-
-# 1부터 n 까지의 합 
-
-def func(n):
-    if n<1:
-        return 0
-    return n+func(n-1)
-print(func(100))
-
-
-# 숫자n 개 중에서 최댓값
-
-def func(List):
-    n=len(List)
-    if n==1:
-        return List
-    else:
-        if List[n-1]<List[n-2]:
-            List.remove(List[n-1])
-        else:
-            List.remove(List[n-2])
-        return func(List)
- 
-List=[1, 2, 9, 3, 27, 49, 0, 16, 4, 2, 8, 76, 3, 3, 75, 6]
-print(func(List))
-
-
-
-# 10부터 1까지의 합계
-
-def addNum(num) :
-    if num <= 1 :
-        return 1
-    return num + addNum(num-1)
-
-print(addNum(10))
-
-
-# 별 그리기
-
-def star(n):
-    if n == 0 :
-        return
-    print("★" * n)
-    star(n-1)
-
-star(5)
-
-
-# 구구단 2~9단 구현 
-
-def func(dan, num) :
-    if num == 10 :
-        return
-    print("%d * %d = %d" %(dan,num,dan*num))
-    func(dan, num+1)
-
-for i in range(1,10):
-    func(i,1)
-    print("%d 단 종료." %i)
-
-
-
-# 랜덤하게 생성한 배열의 합계 구현하기 
-
-import random
-
-def arySum(arr,n) :
-    if n <= 0 :
-        return arr[0]
-    return arySum(arr,n-1) + arr[n]
-
-
-ary = [random.randint(0, 255) for _ in range(random.randint(10,20))]
-# 10~20개인 배열 랜덤생성 후 0~255의 값을 넣음
-
-print(ary)
-
-print('배열 합계 --> ', arySum(ary, len(ary)-1))
-
-
-
-# 피보나치 수열
-
-def fibo(n) :
-    if n == 0:
-        return 0
-    elif n == 1:
-        return 1
-    else :
-        return fibo(n-1) + fibo(n-2)
-
-num = int(input("n까지의 피보나치 수열 --> "))
-
-print('피보나치 수 --> 0 1', end = ' ')
-
-
-
-
-
-
-
-
-
-
-
 
 
 
