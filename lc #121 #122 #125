@@ -14,7 +14,8 @@ class Solution:
 
 # 122. Best Time to Buy and Sell Stock II
 Find the maximum profit you can achieve. You may complete as many transactions as you like (i.e., buy one and sell one share of the stock multiple times).
-
+전날에 비해 당일 가격이 높을 때의 이익을 모두 더함!!
+runtime 88 ms
 class Solution:
     def maxProfit(self, prices: List[int]) -> int:
         profit = 0 
